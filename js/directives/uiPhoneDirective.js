@@ -2,7 +2,7 @@ angular.module('listaTelefonica').directive('uiPhone', function () {
     return {
         require: 'ngModel',
         link: function (scope, element, attrs, ctrl) {
-            var _formatDate = function (phone) {
+            var _formatPhone = function (phone) {
                 if (!phone) return;
                 phone = phone.replace(/[^0-9]+/g, '');
 
@@ -21,7 +21,7 @@ angular.module('listaTelefonica').directive('uiPhone', function () {
             };
 
             element.bind('keyup', function () {
-                ctrl.$setViewValue(_formatDate(ctrl.$viewValue));
+                ctrl.$setViewValue(_formatPhone(ctrl.$viewValue));
                 ctrl.$render();
             });
         }

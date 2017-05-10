@@ -13,14 +13,6 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
         });
     };
 
-    $scope.adicionarContato = function (contato) {
-        contato.data = new Date();
-        contatosAPI.saveContato(contato).then(function (response) {
-            delete $scope.contato;
-            $scope.contatoForm.$setPristine();
-            carregarContatos();
-        });
-    };
     $scope.apagarContatos = function (contatos) {
         var contatosIds = [];
         $scope.contatos = contatos.filter(function (contato) {
