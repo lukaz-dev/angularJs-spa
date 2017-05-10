@@ -1,11 +1,10 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, contatosAPI, operadoras, serialGenerator) {
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, contatosAPI, operadoras) {
     $scope.app = "Lista Telefônica";
     $scope.contatos = contatos.data;
     $scope.operadoras = operadoras.data;
 
     var init = function () {
         calcularImpostos($scope.contatos);
-        generateSerial($scope.contatos);
     };
 
     var calcularImpostos = function (contatos) {
@@ -14,14 +13,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
         });
     };
 
-    var generateSerial = function (contatos) {
-        contatos.forEach(function (item) {
-            item.serial = serialGenerator.generate();
-        });
-    };
-
     $scope.adicionarContato = function (contato) {
-        contato.serial = serialGenerator.generate();
         contato.data = new Date();
         contatosAPI.saveContato(contato).then(function (response) {
             delete $scope.contato;
