@@ -2,11 +2,14 @@
     <h3>Detalhes do Contato</h3>
 	<table class="table">
 		<tr>
-			<td>{{contato.nome | name}}</td>
+			<td>{{contato.nome | nameFilter}}</td>
 		</tr>
 		<tr>
 			<td>{{contato.telefone}}</td>
 		</tr>
+        <tr>
+            <td>{{contato.operadora.nome + ' - ' + contato.operadora.categoria}}</td>
+        </tr>
 		<tr>
 			<td>{{contato.data | date:"dd/MM/yyyy"}}</td>
 		</tr>

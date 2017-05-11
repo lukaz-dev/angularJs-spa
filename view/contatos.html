@@ -19,10 +19,10 @@
         </tr>
         <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
             <td><input type="checkbox" ng-model="contato.selecionado" ng-click="verificarContatoSelecionado(contatos)"></td>
-            <td><a href="#!/detalhesContato/{{contato.id}}">{{::contato.nome | name}}</a></td>
+            <td><a href="#!/detalhesContato/{{contato.id}}">{{::contato.nome | nameFilter}}</a></td>
             <td>{{::contato.telefone}}</td>
             <td>{{::contato.operadora.nome}}</td>
-            <td>{{::contato.operadora.precoComImposto | currency}}</td>
+            <td>{{::contato.operadora.preco | currency}}</td>
             <td>{{::contato.data | date:'dd/MM/yyyy HH:mm'}}</td>
         </tr>
     </table>

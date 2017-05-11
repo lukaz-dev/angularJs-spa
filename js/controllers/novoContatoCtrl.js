@@ -1,5 +1,13 @@
-angular.module("listaTelefonica").controller("novoContatoCtrl", function ($scope, $location, contatosAPI, operadoras) {
-    $scope.operadoras = operadoras.data;
+angular.module("listaTelefonica").controller("novoContatoCtrl", function ($scope, $location, contatosAPI, operadorasAPI) {
+    $scope.operadoras = [];
+
+    var carregarOperadoras = function () {
+        operadorasAPI.getOperadoras().then(function (response) {
+            $scope.operadoras = response.data;
+        }, function (response) {
+            // error
+        });
+    };
 
     $scope.adicionarContato = function (contato) {
         contato.data = new Date();
@@ -9,4 +17,6 @@ angular.module("listaTelefonica").controller("novoContatoCtrl", function ($scope
             $location.path('/contatos');
         });
     };
+
+    carregarOperadoras();
 });
