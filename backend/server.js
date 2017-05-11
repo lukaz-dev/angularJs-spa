@@ -59,16 +59,6 @@ app.post('/contatos', function(req, res) {
     res.json(true);
 });
 
-app.post('/contatos/remove', function(req, res) {
-	contatosIds = req.body;
-	contatos = contatos.filter((contato) => {
-		return !contatosIds.some(function (id) {
-			return contato.id === id;
-		});
-	});
-    res.json(true);
-});
-
 app.get('/operadoras', function(req, res) {
   res.json(operadoras);
 });
