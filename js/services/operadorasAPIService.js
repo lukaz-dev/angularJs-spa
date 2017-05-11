@@ -1,5 +1,5 @@
-angular.module('listaTelefonica').service('operadorasAPI', function ($http, config) {
+angular.module('listaTelefonica').service('operadorasAPI', function ($http, configAPI) {
     this.getOperadoras = function () {
-        return $http.get(config.baseUrl + '/operadoras');
+        return $http.get(configAPI.baseUrl + '/operadoras');
     }
 });

@@ -1,18 +1,18 @@
-angular.module('listaTelefonica').factory('contatosAPI', function ($http, config) {
+angular.module('listaTelefonica').factory('contatosAPI', function ($http, configAPI) {
     var _getContatos = function () {
-        return $http.get(config.baseUrl + '/contatos');
+        return $http.get(configAPI.baseUrl + '/contatos');
     };
 
     var _getContato = function (id) {
-        return $http.get(config.baseUrl + '/contatos/' + id);
+        return $http.get(configAPI.baseUrl + '/contatos/' + id);
     };
 
     var _saveContato = function (contato) {
-        return $http.post(config.baseUrl + '/contatos', contato);
+        return $http.post(configAPI.baseUrl + '/contatos', contato);
     };
 
     var _removeContatos = function (contatosIds) {
-        return $http.post(config.baseUrl + '/contatos/remove', contatosIds);
+        return $http.post(configAPI.baseUrl + '/contatos/remove', contatosIds);
     };
 
     return {
