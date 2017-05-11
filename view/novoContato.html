@@ -1,8 +1,13 @@
 <div class="jumbotron">
     <h3>Novo Contato</h3>
     <hr/>
+
+    <ui-alert ng-if="error" title="Ops, aconteceu um problema!">
+        {{error}}
+    </ui-alert>
+
     <form name="contatoForm">
-        <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10">
+        <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10" autofocus="true">
         <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true" ui-phone ng-pattern="/^\(\d{2}\)\s\d{4,5}-\d{4}$/">
         <select class="form-control" ng-model="contato.operadora"
             ng-options="operadora.nome + ' ( ' + (operadora.preco | currency) + ' )' for operadora in operadoras | orderBy:'nome'">

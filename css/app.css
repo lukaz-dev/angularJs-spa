@@ -1,9 +1,18 @@
+body {
+    background-color: #170202;
+    font-size: 16px;
+}
 .jumbotron {
     width: 700px;
     text-align: center;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    background-color: #ffffff;
+}
+.jumbotron h3 {
+    color: #000;
+    font-weight: bold;
 }
 .table {
     margin-top: 20px;
@@ -19,8 +28,41 @@
     margin-right: auto;
 }
 .selecionado {
-    background-color: yellow;
+    background-color: #ff0000;
 }
 .negrito {
     font-weight: bold;
+}
+.btn-primary {
+    color: #eee;
+    background-color: #606060;
+    border-color: #e00606;
+}
+.btn-primary:hover, .open>.dropdown-toggle.btn-primary {
+    color: #eee;
+    background-color: #383838;
+    border-color: #e00606;
+}
+.btn-primary:focus, .btn-primary:active {
+    outline: none !important;
+    background-color: #383838 !important;
+    border-color: #e00606 !important;
+}
+
+.btn-primary[disabled]:hover {
+    background-color: #383838;
+    border-color: #e00606;
+}
+.btn-danger:hover {
+    color: #fff;
+    background-color: #ff0000;
+    border-color: #ac2925;
+}
+a {
+    color: #980003;
+    text-decoration: none;
+}
+a:focus, a:hover {
+    color: #980003;
+    text-decoration: underline;
 }

@@ -5,7 +5,7 @@ angular.module("listaTelefonica").controller("novoContatoCtrl", function ($scope
         operadorasAPI.getOperadoras().then(function (response) {
             $scope.operadoras = response.data;
         }, function (response) {
-            // error
+            $scope.error = "Não foi possível carregar as operadoras";
         });
     };
 

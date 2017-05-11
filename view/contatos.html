@@ -6,7 +6,7 @@
         {{error}}
     </ui-alert>
 
-    <input class="form-control" type="text" ng-model="criterioDeBusca"
+    <input class="form-control" type="text" ng-model="criterioDeBusca" ng-show="contatos.length > 0"
         ng-model-options="{updateOn: 'default blur', debounce:{default: 500, blur: 0}}" placeholder="O que você está buscando?">
     <table ng-show="contatos.length > 0" class="table">
         <tr>
@@ -27,7 +27,7 @@
         </tr>
     </table>
     <hr/>
-    <a class="btn btn-primary" href="#!/novoContato">Novo contato</a>
+    <a class="btn btn-primary" ng-show="contatos.length > 0" href="#!/novoContato">Novo contato</a>
     <button class="btn btn-danger" ng-click="apagarContatos(contatos)" ng-show="hasContatoSelecionado">
         Apagar Contatos
     </button>
