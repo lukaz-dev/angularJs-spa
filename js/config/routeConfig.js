@@ -7,12 +7,15 @@ angular.module('listaTelefonica').config(function ($routeProvider) {
         templateUrl: "view/novoContato.html",
         controller: "novoContatoCtrl"
     });
-    $routeProvider.when("/detalhesContato/:id", {
-        templateUrl: "view/detalhesContato.html",
-        controller: "detalhesContatoCtrl",
+    $routeProvider.when("/editarContato/:id", {
+        templateUrl: "view/editarContato.html",
+        controller: "editarContatoCtrl",
         resolve: {
             contato: function (contatosAPI, $route) {
                 return contatosAPI.getContato($route.current.params.id);
+            },
+            operadoras: function (operadorasAPI) {
+                return operadorasAPI.getOperadoras();
             }
         }
     });

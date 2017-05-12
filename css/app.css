@@ -13,6 +13,7 @@ body {
 .jumbotron h3 {
     color: #000;
     font-weight: bold;
+    margin-top: -20px;
 }
 .table {
     margin-top: 20px;
@@ -34,6 +35,7 @@ body {
     font-weight: bold;
 }
 .btn-primary {
+    min-width: 100px;
     color: #eee;
     background-color: #606060;
     border-color: #e00606;

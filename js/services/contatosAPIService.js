@@ -11,6 +11,10 @@ angular.module('listaTelefonica').factory('contatosAPI', function ($http, config
         return $http.post(configAPI.baseUrl + '/contatos', contato);
     };
 
+    var _updateContato = function (contato) {
+        return $http.put(configAPI.baseUrl + '/contatos/' + contato.id, contato);
+    };
+
     var _removeContatos = function (contatosIds) {
         contatosIds.forEach((id) => {
             $http.delete(configAPI.baseUrl + '/contatos/' + id);
@@ -21,6 +25,7 @@ angular.module('listaTelefonica').factory('contatosAPI', function ($http, config
         getContatos: _getContatos,
         getContato: _getContato,
         saveContato: _saveContato,
+        updateContato: _updateContato,
         removeContatos: _removeContatos
     };
 });

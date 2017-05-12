@@ -12,11 +12,9 @@ angular.module("listaTelefonica").controller("novoContatoCtrl", function ($scope
     $scope.adicionarContato = function (contato) {
         contato.data = new Date();
         contatosAPI.saveContato(contato).then(function (response) {
-            delete $scope.contato;
-            $scope.contatoForm.$setPristine();
             $location.path('/contatos');
         });
     };
-
+    
     carregarOperadoras();
 });
