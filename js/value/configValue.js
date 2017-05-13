@@ -1,3 +1,3 @@
 angular.module('listaTelefonica').constant('configAPI', {
-    baseUrl: "http://localhost:8080/api"
+    baseUrl: "https://lukazdev-listaapi.herokuapp.com/api"
 });
