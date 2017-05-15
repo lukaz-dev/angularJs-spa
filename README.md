@@ -1,2 +1,1 @@
-# angularjs-spa
-AngularJS SPA example
+## AngularJS SPA example
